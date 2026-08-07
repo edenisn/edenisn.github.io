@@ -47,6 +47,16 @@ section: cv
           </h3>
           <p class="entry__role"><%= job[:role] %></p>
           <p class="entry__meta"><%= job[:location] %></p>
+          <% if job[:about] %>
+            <p class="entry__about"><%= job[:about] %></p>
+          <% end %>
+          <% if job[:details] %>
+            <ul class="entry__list">
+              <% job[:details].each do |detail| %>
+                <li><%= detail %></li>
+              <% end %>
+            </ul>
+          <% end %>
         </div>
       </li>
     <% end %>

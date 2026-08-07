@@ -57,18 +57,35 @@ en:
         role: Senior backend developer
         start: '2024-11'
         location: Russia
+        about: >-
+          A platform for hiring self-employed contractors: tasks, document flow,
+          instant payouts and tax risk control.
+        details:
+          - 'Fintech integrations: bulk payouts to contractors via instant payments
+            and partner banks'
+          - 'Tax service integration: a receipt for every payout, income limit checks'
+          - Public API for corporate clients and integrations with their systems
+          - 'Platform core and performance: tasks, contractor onboarding, database
+            under load, background jobs'
       - company: RTK IT
         role: Senior backend software engineer
         start: '2022-12'
         end: '2024-11'
         location: Moscow, Russia
         concurrent: true
+        about: 'A smart home platform: devices, automation scenarios, mobile apps.'
+        details:
+          - Designed and built microservices for the complex parts of the product
+          - Integrated those microservices with the monolith
       - company: igooods
         role: Senior backend software engineer
         start: '2021-08'
         end: '2024-11'
         location: Saint Petersburg, Russia
         concurrent: true
+        about: A grocery delivery service.
+        details:
+          - 'Fintech integrations: payouts through Rocketbank, Tinkoff and other banks'
       - company: Soft Project
         role: Senior software engineer
         start: '2021-04'
@@ -79,6 +96,10 @@ en:
         start: '2017-08'
         end: '2021-04'
         location: Toronto, Canada
+        about: A Canadian edtech startup with study materials for students.
+        details:
+          - A wide range of Rails work, from business logic to legacy maintenance
+          - Focused interface work in React
       - company: ABAK-PRESS
         role: Fullstack Ruby on Rails developer, DevOps engineer
         start: '2016-08'
