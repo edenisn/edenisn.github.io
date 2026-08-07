@@ -1,0 +1,32 @@
+name: CI
+
+# Netlify is the only thing that used to build the site, so a broken template
+# or a dead link surfaced after it was already published. This runs the same
+# build first and then checks the output.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec middleman build
+
+      # External links are left alone on purpose: GitHub and Telegram rate limit
+      # CI runners, and their outages are not this repository's problem.
+      - name: Check links, images and favicons
+        run: >-
+          bundle exec htmlproofer build
+          --disable-external
+          --allow-hash-href
+          --checks Links,Images,Scripts,Favicon
