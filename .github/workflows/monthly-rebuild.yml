@@ -2,7 +2,8 @@ name: Monthly rebuild
 
 # The CV derives job periods and total experience from the current date at
 # build time, so without a periodic rebuild "1 year 10 months" slowly goes
-# stale between deploys.
+# stale between deploys. The same staleness applies to the committed PDFs,
+# which are re-rendered here from the freshly built pages.
 #
 # Requires a NETLIFY_BUILD_HOOK repository secret:
 #   Netlify -> Site configuration -> Build & deploy -> Build hooks -> Add hook
@@ -13,11 +14,43 @@ on:
     - cron: '0 6 1 * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  trigger:
+  rebuild:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec middleman build
+
+      - name: Render CV PDFs
+        run: tools/cv-pdf/render.sh
+
+      - name: Commit refreshed PDFs
+        id: pdf
+        run: |
+          if git diff --quiet -- source/cv-ru.pdf source/cv-en.pdf; then
+            echo "PDFs unchanged."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add source/cv-ru.pdf source/cv-en.pdf
+          git commit -m 'Refresh CV PDFs'
+          git push
+          echo 'pushed=true' >>"$GITHUB_OUTPUT"
+
+      # A push already makes Netlify rebuild, so the hook is only needed when
+      # the PDFs came out identical and nothing was committed.
       - name: Trigger Netlify build
+        if: steps.pdf.outputs.pushed != 'true'
         env:
           BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
         run: |

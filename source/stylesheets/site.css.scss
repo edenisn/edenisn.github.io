@@ -477,18 +477,20 @@ a:focus-visible {
 @media print {
   .scanlines, .nav, .prompt, .cursor, .hero__cta, .footer { display: none !important; }
 
+  /* Tuned so the CV lands on three pages instead of spilling three contact
+     lines onto a fourth. Re-check tools/cv-pdf/render.sh output after edits. */
   body {
     background: #fff;
     color: #111;
-    font-size: 10.5pt;
-    line-height: 1.45;
+    font-size: 9.8pt;
+    line-height: 1.4;
   }
 
   .shell { max-width: none; padding: 0; }
   .main { padding-top: 0; }
   .topbar { border-bottom: 0; padding: 0; }
 
-  .hero { margin-bottom: 18pt; }
+  .hero { margin-bottom: 12pt; }
   .hero__name { color: #111; font-size: 20pt; }
   .hero__role, .hero__intro, .prose, .entry__role { color: #111; }
   .hero__handle, .entry__dates, .entry__duration, .entry__meta,
@@ -496,7 +498,7 @@ a:focus-visible {
 
   /* Sections are too tall to keep whole; only keep each entry intact and
      never leave a heading stranded at the foot of a page. */
-  .section { margin-bottom: 16pt; }
+  .section { margin-bottom: 10pt; }
 
   .section__title {
     color: #111;
@@ -509,13 +511,14 @@ a:focus-visible {
   .section__title::before { content: none; }
 
   .entry {
-    padding: 6pt 0;
+    padding: 4pt 0;
     border-bottom: 0.5pt dotted #bbb;
     page-break-inside: avoid;
   }
 
   .entry__title { color: #111; font-size: 11pt; }
-  .entry__list { color: #222; }
+  .entry__list,
+  .entry__about { color: #222; }
   .entry__tag { border-color: #999; color: #444; }
 
   .tag {

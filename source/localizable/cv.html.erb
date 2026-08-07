@@ -8,6 +8,11 @@ section: cv
   <p class="hero__role"><%= t('home.name') %> &middot; <%= t('home.role') %></p>
   <%# Middleman's `t` helper drops keyword args on Ruby 3, so go through I18n. %>
   <p class="hero__intro"><%= I18n.t('cv.lead', experience: total_experience) %></p>
+  <p class="hero__cta">
+    <a href="<%= cv_pdf_path %>" class="button" download>
+      <%= t('cv.download') %> <span class="button__arrow" aria-hidden="true">&darr;</span>
+    </a>
+  </p>
 </section>
 
 <section class="section">

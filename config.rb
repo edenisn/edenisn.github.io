@@ -90,7 +90,13 @@ helpers do
     content_tag(:a, t("nav.#{section}"), href: locale_path(page), class: classes.join(' '))
   end
 
-  # ------------------------------------------------------------ structured data
+      # Rendered from the print stylesheet by tools/cv-pdf/render.sh and refreshed
+      # by the monthly workflow, so the durations inside stay current.
+      def cv_pdf_path
+        "/cv-#{I18n.locale}.pdf"
+      end
+
+      # ------------------------------------------------------------ structured data
 
   # schema.org/Person, so search engines can tie the name, the job and the
   # profiles together instead of guessing from prose.
