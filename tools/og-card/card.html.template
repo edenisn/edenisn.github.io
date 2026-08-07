@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="__LANG__">
+<head>
+<meta charset="utf-8">
+<!--
+  Source for the 1200x630 link preview. The palette is duplicated from
+  _tokens.scss on purpose: this file is rendered by Chrome outside the
+  Middleman pipeline, so it cannot import the stylesheet.
+-->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+
+  body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    padding: 0 72px;
+    overflow: hidden;
+    background: #0c0e0b;
+    color: #ccd3c6;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  .frame {
+    position: absolute;
+    inset: 26px;
+    border: 1px solid #262d22;
+    border-radius: 4px;
+  }
+
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 4px);
+  }
+
+  .portrait {
+    position: relative;
+    flex: none;
+    width: 280px;
+    overflow: hidden;
+    border: 1px solid #262d22;
+    border-radius: 3px;
+    background: linear-gradient(165deg, #d9a253 0%, #a9762c 50%, #2b1e10 100%);
+    isolation: isolate;
+  }
+
+  .portrait img {
+    display: block;
+    width: 100%;
+    filter: grayscale(1) brightness(1.18) contrast(1.08);
+    mix-blend-mode: luminosity;
+  }
+
+  .portrait::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: radial-gradient(88% 62% at 50% 40%, transparent 12%, rgba(0, 0, 0, 0.5) 88%);
+  }
+
+  .portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.16) 0 1px, transparent 1px 3px);
+  }
+
+  .text { position: relative; }
+  .handle { color: #7a8472; font-size: 25px; letter-spacing: 0.08em; }
+  .name { margin-top: 14px; color: #ffb552; font-size: 66px; letter-spacing: -0.01em; }
+  .role { margin-top: 18px; font-size: 30px; }
+  .url { margin-top: 38px; color: #8d9786; font-size: 25px; }
+  .url span { color: #8ae234; }
+</style>
+</head>
+<body>
+  <div class="frame"></div>
+
+  <figure class="portrait"><img src="portrait.jpg" alt=""></figure>
+
+  <div class="text">
+    <p class="handle">@edenisn</p>
+    <p class="name">__NAME__</p>
+    <p class="role">__ROLE__</p>
+    <p class="url"><span>$</span> edenisn.ru</p>
+  </div>
+
+  <div class="scanlines"></div>
+</body>
+</html>

@@ -33,9 +33,12 @@
     <% other_langs.each do |lang| %>
       <meta property="og:locale:alternate" content="<%= lang == :ru ? 'ru_RU' : 'en_US' %>">
     <% end %>
-    <meta property="og:image" content="<%= absolute_url('/images/portrait.jpg') %>">
-    <meta property="og:image:alt" content="<%= t('home.portrait_alt') %>">
-    <meta name="twitter:card" content="summary">
+    <%# Rendered by tools/og-card/render.sh; regenerate it after a role change. %>
+    <meta property="og:image" content="<%= absolute_url("/images/og-#{I18n.locale}.png") %>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="<%= t('home.name') %> — <%= t('home.role') %>">
+    <meta name="twitter:card" content="summary_large_image">
 
     <script type="application/ld+json"><%= person_schema %></script>
 
