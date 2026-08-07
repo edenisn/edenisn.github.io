@@ -1,0 +1,29 @@
+name: Monthly rebuild
+
+# The CV derives job periods and total experience from the current date at
+# build time, so without a periodic rebuild "1 year 10 months" slowly goes
+# stale between deploys.
+#
+# Requires a NETLIFY_BUILD_HOOK repository secret:
+#   Netlify -> Site configuration -> Build & deploy -> Build hooks -> Add hook
+#   GitHub  -> Settings -> Secrets and variables -> Actions -> New secret
+
+on:
+  schedule:
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify build
+        env:
+          BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        run: |
+          if [ -z "$BUILD_HOOK" ]; then
+            echo "NETLIFY_BUILD_HOOK is not set; add it in repository secrets." >&2
+            exit 1
+          fi
+          curl --fail --silent --show-error -X POST -d '{}' "$BUILD_HOOK"
+          echo "Netlify build triggered."

@@ -18,7 +18,7 @@ section: home
 </section>
 
 <section class="section">
-  <h2 class="section__title"><span class="section__sigil">##</span> <%= t('home.stack_title') %></h2>
+  <h2 class="section__title"><%= t('home.stack_title') %></h2>
   <ul class="tags">
     <% stack.each do |tech| %>
       <li class="tag"><%= tech %></li>
@@ -27,7 +27,7 @@ section: home
 </section>
 
 <section class="section">
-  <h2 class="section__title"><span class="section__sigil">##</span> <%= t('home.contacts_title') %></h2>
+  <h2 class="section__title"><%= t('home.contacts_title') %></h2>
   <dl class="contacts">
     <div class="contacts__row">
       <dt class="contacts__key"><%= t('contacts.email') %></dt>

@@ -202,7 +202,13 @@ a:focus-visible {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
-  &__sigil, .section__sigil { color: $c-accent-lo; text-transform: none; }
+  // Purely decorative, so it stays out of the DOM: screen readers and
+  // crawlers would otherwise read "## Опыт работы".
+  &::before {
+    content: '##';
+    color: $c-accent-lo;
+    text-transform: none;
+  }
 }
 
 .prose {
@@ -397,7 +403,7 @@ a:focus-visible {
     break-after: avoid;
   }
 
-  .section__sigil { display: none; }
+  .section__title::before { content: none; }
 
   .entry {
     padding: 6pt 0;

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%#
+  Sections are read from the sitemap, so a new localizable page appears here as
+  soon as it declares a `section` in its front matter. Locales are applied on
+  top: localized resources are proxies and do not all carry a locale.
+-%>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<% slugs = sitemap.resources
+                  .select { |resource| resource.ext == '.html' && resource.data.section }
+                  .map { |resource| resource.data.section == 'home' ? '' : resource.data.section }
+                  .uniq
+                  .sort -%>
+<% site_langs.each do |lang| -%>
+<% slugs.each do |slug| -%>
+  <url>
+    <loc><%= absolute_url(locale_path(slug, locale: lang)) %></loc>
+<% site_langs.each do |alternate| -%>
+    <xhtml:link rel="alternate" hreflang="<%= alternate %>" href="<%= absolute_url(locale_path(slug, locale: alternate)) %>"/>
+<% end -%>
+    <xhtml:link rel="alternate" hreflang="x-default" href="<%= absolute_url(locale_path(slug, locale: :ru)) %>"/>
+    <changefreq>monthly</changefreq>
+  </url>
+<% end -%>
+<% end -%>
+</urlset>

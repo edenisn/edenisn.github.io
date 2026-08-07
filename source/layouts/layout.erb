@@ -13,11 +13,21 @@
       <link rel="alternate" hreflang="<%= lang %>"
             href="<%= absolute_url(locale_path(current_slug, locale: lang)) %>">
     <% end %>
+    <link rel="alternate" hreflang="x-default"
+          href="<%= absolute_url(locale_path(current_slug, locale: :ru)) %>">
 
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="<%= t('home.name') %>">
     <meta property="og:title" content="<%= t(current_page.data.title_key) %>">
     <meta property="og:description" content="<%= t(current_page.data.description_key) %>">
     <meta property="og:url" content="<%= absolute_url(locale_path(current_slug)) %>">
+    <meta property="og:locale" content="<%= I18n.locale == :ru ? 'ru_RU' : 'en_US' %>">
+    <% other_langs.each do |lang| %>
+      <meta property="og:locale:alternate" content="<%= lang == :ru ? 'ru_RU' : 'en_US' %>">
+    <% end %>
+    <meta name="twitter:card" content="summary">
+
+    <script type="application/ld+json"><%= person_schema %></script>
 
     <%= stylesheet_link_tag 'site' %>
   </head>

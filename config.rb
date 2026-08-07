@@ -2,11 +2,18 @@
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
 require 'date'
+require 'json'
 
 # Constants declared here are not visible from templates, so site-wide values
 # live in config and are read back through helpers.
 set :site_langs, %i[ru en]
 set :site_url, 'https://edenisn.ru'
+set :site_email, 'edenisn@gmail.com'
+set :site_profiles, [
+  'https://github.com/edenisn',
+  'https://t.me/edenisn',
+  'https://career.habr.com/erofeevdn'
+]
 
 activate :i18n,
          templates_dir: 'localizable',
@@ -71,6 +78,37 @@ helpers do
     classes = ['nav__link']
     classes << 'is-current' if current_section == section
     content_tag(:a, t("nav.#{section}"), href: locale_path(page), class: classes.join(' '))
+  end
+
+  # ------------------------------------------------------------ structured data
+
+  # schema.org/Person, so search engines can tie the name, the job and the
+  # profiles together instead of guessing from prose.
+  def person_schema
+    current_job = t('cv.jobs').find { |job| job[:end].nil? }
+
+    data = {
+      '@context' => 'https://schema.org',
+      '@type' => 'Person',
+      'name' => t('home.name'),
+      'alternateName' => t('home.handle'),
+      'jobTitle' => t('home.role'),
+      'description' => t(current_page.data.description_key),
+      'url' => absolute_url(locale_path),
+      'email' => "mailto:#{config[:site_email]}",
+      'sameAs' => config[:site_profiles],
+      'knowsAbout' => t('cv.skill_groups').flat_map { |group| group[:items] },
+      'alumniOf' => {
+        '@type' => 'CollegeOrUniversity',
+        'name' => t('cv.schools').first[:place]
+      }
+    }
+
+    if current_job
+      data['worksFor'] = { '@type' => 'Organization', 'name' => current_job[:company] }
+    end
+
+    JSON.pretty_generate(data)
   end
 
   # ---------------------------------------------------------------- CV dates
