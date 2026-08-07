@@ -1,0 +1,64 @@
+---
+title_key: meta.home_title
+description_key: meta.home_description
+section: home
+---
+<% stack = %w[Ruby Rails Hanami Go PostgreSQL Redis Kafka RabbitMQ Docker Kubernetes] %>
+
+<section class="hero">
+  <p class="hero__handle">@<%= t('home.handle') %></p>
+  <h1 class="hero__name"><%= t('home.name') %><span class="cursor" aria-hidden="true"></span></h1>
+  <p class="hero__role"><%= t('home.role') %></p>
+  <p class="hero__intro"><%= t('home.intro') %></p>
+  <p class="hero__cta">
+    <a href="<%= locale_path('cv') %>" class="button">
+      <%= t('home.cta_cv') %> <span class="button__arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </p>
+</section>
+
+<section class="section">
+  <h2 class="section__title"><span class="section__sigil">##</span> <%= t('home.stack_title') %></h2>
+  <ul class="tags">
+    <% stack.each do |tech| %>
+      <li class="tag"><%= tech %></li>
+    <% end %>
+  </ul>
+</section>
+
+<section class="section">
+  <h2 class="section__title"><span class="section__sigil">##</span> <%= t('home.contacts_title') %></h2>
+  <dl class="contacts">
+    <div class="contacts__row">
+      <dt class="contacts__key"><%= t('contacts.email') %></dt>
+      <dd class="contacts__value"><a href="mailto:edenisn@gmail.com">edenisn@gmail.com</a></dd>
+    </div>
+    <div class="contacts__row">
+      <dt class="contacts__key"><%= t('contacts.telegram') %></dt>
+      <dd class="contacts__value"><a href="https://t.me/edenisn" rel="me">@edenisn</a></dd>
+    </div>
+    <div class="contacts__row">
+      <dt class="contacts__key"><%= t('contacts.github') %></dt>
+      <dd class="contacts__value"><a href="https://github.com/edenisn" rel="me">github.com/edenisn</a></dd>
+    </div>
+    <div class="contacts__row">
+      <dt class="contacts__key"><%= t('contacts.habr') %></dt>
+      <dd class="contacts__value"><a href="https://career.habr.com/erofeevdn" rel="me">career.habr.com/erofeevdn</a></dd>
+    </div>
+  </dl>
+</section>
+
+<section class="section">
+  <% code('ruby') do %>
+User.new(
+  id:    'edenisn',
+  name:  'Denis Erofeev',
+  role:  'Senior Ruby on Rails developer',
+  since: 2007,
+  urls:  %w[
+    https://github.com/edenisn
+    https://edenisn.ru
+  ]
+)
+  <% end %>
+</section>

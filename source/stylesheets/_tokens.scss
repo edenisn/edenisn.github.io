@@ -1,0 +1,30 @@
+// Retro amber-phosphor terminal.
+// Swapping the palette here is enough to reskin the whole site.
+
+$c-bg:        #0c0e0b;
+$c-surface:   #12160f;
+$c-border:    #262d22;
+$c-border-lo: #1b2117;
+
+$c-text:      #ccd3c6;
+$c-muted:     #8d9786;
+$c-faint:     #5f6a59;
+
+$c-accent:    #ffb552; // amber phosphor
+$c-accent-lo: #a9762c;
+$c-green:     #8ae234; // shell prompt
+$c-cyan:      #6fb3c0;
+
+$font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+            "Liberation Mono", "DejaVu Sans Mono", monospace;
+
+$measure: 74ch;
+$radius: 2px;
+
+// Vertical rhythm
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 16px;
+$space-4: 24px;
+$space-5: 40px;
+$space-6: 64px;

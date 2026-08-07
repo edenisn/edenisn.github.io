@@ -1,0 +1,137 @@
+en:
+  lang_name: EN
+  date:
+    month_names: [January, February, March, April, May, June, July, August,
+                  September, October, November, December]
+  units:
+    years: [year, years]
+    months: [month, months]
+  nav:
+    label: Main navigation
+    home: home
+    cv: cv
+  meta:
+    home_title: Denis Erofeev — Senior Ruby developer
+    home_description: Denis Erofeev, Senior Ruby on Rails developer. Backend, APIs, integrations, data.
+    cv_title: CV — Denis Erofeev
+    cv_description: CV of Denis Erofeev, Senior Ruby on Rails developer with 19 years of experience.
+  home:
+    name: Denis Erofeev
+    handle: edenisn
+    role: Senior Ruby on Rails developer
+    intro: >-
+      I design and grow the server side of web applications: APIs, business logic,
+      integrations, data access and background processing. I ship services to
+      production and keep them running.
+    cta_cv: Read my CV
+    contacts_title: Get in touch
+    stack_title: Core stack
+  cv:
+    title: CV
+    lead: >-
+      Backend developer with %{experience} in the profession. Core stack is Ruby
+      (Rails, Hanami), plus Go. I design APIs, work with databases under load, build
+      asynchronous integrations, and grow legacy codebases instead of fearing them.
+    download: Print version
+    sections:
+      skills: Skills
+      experience: Experience
+      education: Education
+      courses: Continued education
+      community: Communities
+      about: About
+    present: present
+    skill_groups:
+      - title: Languages
+        items: [Ruby, Go, JavaScript, SQL, Shell]
+      - title: Frameworks
+        items: [Ruby on Rails, Hanami, RSpec, React, jQuery]
+      - title: Data & queues
+        items: [PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, Sphinx, Kafka,
+                RabbitMQ]
+      - title: Infrastructure
+        items: ['Linux (Ubuntu, Debian, Red Hat)', Docker, Kubernetes, Git]
+    jobs:
+      - company: Konsol.Pro
+        role: Senior backend developer
+        start: '2024-11'
+        location: Russia
+      - company: RTK IT
+        role: Senior backend software engineer
+        start: '2022-12'
+        end: '2024-11'
+        location: Moscow, Russia
+      - company: igooods
+        role: Senior backend software engineer
+        start: '2021-08'
+        end: '2024-11'
+        location: Saint Petersburg, Russia
+      - company: Soft Project
+        role: Senior software engineer
+        start: '2021-04'
+        end: '2021-07'
+        location: Moscow, Russia
+      - company: OneClass
+        role: Fullstack Ruby on Rails developer
+        start: '2017-08'
+        end: '2021-04'
+        location: Toronto, Canada
+      - company: ABAK-PRESS
+        role: Fullstack Ruby on Rails developer, DevOps engineer
+        start: '2016-08'
+        end: '2017-08'
+        location: Yekaterinburg, Russia
+      - company: ITBeaver
+        role: Fullstack Ruby on Rails developer
+        start: '2015-12'
+        end: '2016-08'
+        location: Perm, Russia
+      - company: Volgogradenergosbyt
+        role: Lead programmer
+        start: '2007-02'
+        end: '2015-12'
+        location: Volgograd, Russia
+    schools:
+      - place: Volgograd State Technical University
+        start: '1999'
+        end: '2004'
+        faculty: Faculty of Electronics and Computer Engineering
+        location: Volgograd, Russia
+        details:
+          - 'BSc: automated information processing and control systems'
+          - 'Engineer: computers, systems and networks'
+    courses:
+      - place: Skillbox
+        start: '2024-04'
+        end: '2024-09'
+        title: Software Architect
+        details:
+          - Architectural styles, distributed architecture, monolith refactoring
+          - Functional and non-functional requirements, API design
+          - Transaction management, event-driven work, integration
+          - Service discovery, configuration, security, API gateway
+          - Infrastructure and runtime, observability, cloud native
+    community:
+      - place: GitHub
+        start: '2011-05'
+        text: '4781 contributions across 19 repositories: Ruby, JavaScript, Go, SCSS, Shell'
+        url: https://github.com/edenisn
+    about:
+      - >-
+        I design and grow the server side of web applications: APIs, business logic,
+        integrations, data access and background processing.
+      - >-
+        Frontend — React, jQuery, HTML5, CSS — when the interface needs support
+        or extending.
+      - >-
+        I can take services to production and keep them there: designing APIs,
+        working with databases under load, building asynchronous integrations,
+        and making sense of legacy code. I take part in open source.
+  contacts:
+    email: Email
+    telegram: Telegram
+    github: GitHub
+    habr: Habr Career
+  footer:
+    built: Built with Middleman
+    source: Source code

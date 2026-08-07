@@ -1,0 +1,34 @@
+// Rouge theme tuned to the terminal palette.
+.highlight {
+  background: $c-surface;
+  border: 1px solid $c-border;
+  border-radius: $radius;
+  padding: $space-3 $space-4;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: $c-text;
+
+  // Rouge nests <pre class="highlight"> inside <div class="highlight">, so the
+  // frame must be drawn by the outer box only.
+  .highlight,
+  pre,
+  code {
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .c, .cm, .c1, .cs { color: $c-faint; font-style: italic; }
+  .k, .kd, .kn, .kp, .kr, .kv { color: $c-accent; }
+  .kc, .kt { color: $c-cyan; }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: $c-green; }
+  .m, .mf, .mh, .mi, .mo, .il { color: $c-cyan; }
+  .n, .na, .nb, .nc, .nd, .ne, .nf, .nl, .nn, .nx, .py { color: $c-text; }
+  .nc, .nn { color: $c-accent; }
+  .nb, .bp { color: $c-cyan; }
+  .o, .ow, .p { color: $c-muted; }
+  .vi, .vc, .vg { color: $c-accent-lo; }
+  .err { color: #ff6b6b; }
+}

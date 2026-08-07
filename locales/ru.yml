@@ -1,0 +1,138 @@
+ru:
+  lang_name: RU
+  date:
+    month_names: [Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август,
+                  Сентябрь, Октябрь, Ноябрь, Декабрь]
+  units:
+    years: [год, года, лет]
+    months: [месяц, месяца, месяцев]
+  nav:
+    label: Основная навигация
+    home: главная
+    cv: резюме
+  meta:
+    home_title: Денис Ерофеев — Senior Ruby разработчик
+    home_description: Денис Ерофеев, Senior Ruby on Rails разработчик. Бэкенд, API, интеграции, работа с данными.
+    cv_title: Резюме — Денис Ерофеев
+    cv_description: Резюме Дениса Ерофеева, Senior Ruby on Rails разработчик, 19 лет опыта.
+  home:
+    name: Денис Ерофеев
+    handle: edenisn
+    role: Senior Ruby on Rails разработчик
+    intro: >-
+      Проектирую и развиваю серверную часть веб-приложений: API, бизнес-логику,
+      интеграции, работу с данными и фоновые процессы. Вывожу сервисы в production
+      и сопровождаю их.
+    cta_cv: Смотреть резюме
+    contacts_title: Связаться
+    stack_title: Основной стек
+  cv:
+    title: Резюме
+    lead: >-
+      Бэкенд-разработчик, в профессии %{experience}. Основной стек — Ruby
+      (Rails, Hanami), также Go. Умею проектировать API, работать с базами под
+      нагрузкой, строить асинхронные интеграции, разбираться в legacy
+      и развивать существующий код.
+    download: Версия для печати
+    sections:
+      skills: Навыки
+      experience: Опыт работы
+      education: Образование
+      courses: Дополнительное образование
+      community: Профессиональные сообщества
+      about: О себе
+    present: по настоящее время
+    skill_groups:
+      - title: Языки
+        items: [Ruby, Go, JavaScript, SQL, Shell]
+      - title: Фреймворки
+        items: [Ruby on Rails, Hanami, RSpec, React, jQuery]
+      - title: Данные и очереди
+        items: [PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, Sphinx, Kafka,
+                RabbitMQ]
+      - title: Инфраструктура
+        items: ['Linux (Ubuntu, Debian, Red Hat)', Docker, Kubernetes, Git]
+    jobs:
+      - company: Консоль.Про
+        role: Старший бэкенд-разработчик
+        start: '2024-11'
+        location: Россия
+      - company: РТК ИТ
+        role: Backend software engineer, старший
+        start: '2022-12'
+        end: '2024-11'
+        location: Россия, Москва
+      - company: igooods
+        role: Backend software engineer, старший
+        start: '2021-08'
+        end: '2024-11'
+        location: Россия, Санкт-Петербург
+      - company: Софт Проект
+        role: Senior software engineer
+        start: '2021-04'
+        end: '2021-07'
+        location: Россия, Москва
+      - company: OneClass
+        role: Fullstack Ruby on Rails developer
+        start: '2017-08'
+        end: '2021-04'
+        location: Канада, Торонто
+      - company: АБАК-ПРЕСС
+        role: Fullstack Ruby on Rails developer, DevOps engineer
+        start: '2016-08'
+        end: '2017-08'
+        location: Россия, Екатеринбург
+      - company: ITBeaver
+        role: Fullstack Ruby on Rails developer
+        start: '2015-12'
+        end: '2016-08'
+        location: Россия, Пермь
+      - company: Волгоградэнергосбыт
+        role: Ведущий программист
+        start: '2007-02'
+        end: '2015-12'
+        location: Россия, Волгоград
+    schools:
+      - place: Волгоградский государственный технический университет
+        start: '1999'
+        end: '2004'
+        faculty: Электроники и вычислительной техники (ЭиВТ)
+        location: Россия, Волгоград
+        details:
+          - 'Бакалавр: автоматизированные системы обработки информации и управления'
+          - 'Инженер: ЭВМ, комплексы, системы и сети'
+    courses:
+      - place: Skillbox
+        start: '2024-04'
+        end: '2024-09'
+        title: Архитектор программного обеспечения
+        details:
+          - Архитектурные стили, распределённая архитектура, монолит и его рефакторинг
+          - Функциональные и нефункциональные требования, проектирование API
+          - Управление транзакциями, работа с событиями, интеграция
+          - Service discovery, configuration, security, API gateway
+          - Инфраструктура и среда исполнения, observability, cloud native
+    community:
+      - place: GitHub
+        start: '2011-05'
+        text: '4781 вклад в 19 репозиториев: Ruby, JavaScript, Go, SCSS, Shell'
+        url: https://github.com/edenisn
+    about:
+      - >-
+        Проектирую и развиваю серверную часть веб-приложений: API, бизнес-логику,
+        интеграции, работу с данными и фоновые процессы.
+      - >-
+        Frontend — React, jQuery, HTML5, CSS — для поддержки и доработки интерфейса,
+        когда это нужно.
+      - >-
+        Умею выводить и сопровождать сервисы в production: проектировать API,
+        работать с базами данных под нагрузкой, строить асинхронные интеграции,
+        разбираться в legacy и развивать существующий код. Участвую в open source.
+  contacts:
+    email: Почта
+    telegram: Телеграм
+    github: GitHub
+    habr: Хабр Карьера
+  footer:
+    built: Собрано на Middleman
+    source: Исходный код

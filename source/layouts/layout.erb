@@ -1,15 +1,59 @@
 <!doctype html>
-<html>
+<html lang="<%= I18n.locale %>">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width">
-    <!-- Use the title from a page's frontmatter if it has one -->
-    <title><%= current_page.data.title || "Denis Erofeev (edenisn)" %></title>
-    <%= stylesheet_link_tag "site" %>
-    <%= javascript_include_tag "site" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= t(current_page.data.title_key) %></title>
+    <meta name="description" content="<%= t(current_page.data.description_key) %>">
+    <meta name="author" content="<%= t('home.name') %>">
+    <meta name="theme-color" content="#0c0e0b">
+
+    <link rel="canonical" href="<%= absolute_url(locale_path(current_slug)) %>">
+    <% site_langs.each do |lang| %>
+      <link rel="alternate" hreflang="<%= lang %>"
+            href="<%= absolute_url(locale_path(current_slug, locale: lang)) %>">
+    <% end %>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<%= t(current_page.data.title_key) %>">
+    <meta property="og:description" content="<%= t(current_page.data.description_key) %>">
+    <meta property="og:url" content="<%= absolute_url(locale_path(current_slug)) %>">
+
+    <%= stylesheet_link_tag 'site' %>
   </head>
-  <body>
-    <%= yield %>
+  <body class="page page--<%= current_section %>">
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <div class="shell">
+      <header class="topbar">
+        <p class="prompt">
+          <span class="prompt__user">visitor@edenisn.ru</span><span class="prompt__sep">:</span><span class="prompt__path">~</span><span class="prompt__sigil">$</span>
+        </p>
+        <nav class="nav" aria-label="<%= t('nav.label') %>">
+          <%= nav_link('home', '') %>
+          <%= nav_link('cv', 'cv') %>
+          <span class="nav__langs">
+            <span class="nav__lang is-current" aria-current="true"><%= t('lang_name') %></span>
+            <% other_langs.each do |lang| %>
+              <%# Middleman's `t` helper drops keyword args on Ruby 3, so go through I18n. %>
+              <a href="<%= locale_path(current_slug, locale: lang) %>"
+                 class="nav__lang" lang="<%= lang %>" rel="alternate"><%= I18n.t('lang_name', locale: lang) %></a>
+            <% end %>
+          </span>
+        </nav>
+      </header>
+
+      <main class="main">
+        <%= yield %>
+      </main>
+
+      <footer class="footer">
+        <p>
+          <span class="footer__dim"><%= t('footer.built') %></span>
+          &middot;
+          <a href="https://github.com/edenisn/edenisn.github.io"><%= t('footer.source') %></a>
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
