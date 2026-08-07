@@ -23,6 +23,7 @@ en:
       I design and grow the server side of web applications: APIs, business logic,
       integrations, data access and background processing. I ship services to
       production and keep them running.
+    portrait_alt: Denis Erofeev, portrait
     cta_cv: Read my CV
     contacts_title: Get in touch
     stack_title: Core stack
@@ -41,6 +42,7 @@ en:
       community: Communities
       about: About
     present: present
+    concurrent: concurrent
     skill_groups:
       - title: Languages
         items: [Ruby, Go, JavaScript, SQL, Shell]
@@ -61,11 +63,13 @@ en:
         start: '2022-12'
         end: '2024-11'
         location: Moscow, Russia
+        concurrent: true
       - company: igooods
         role: Senior backend software engineer
         start: '2021-08'
         end: '2024-11'
         location: Saint Petersburg, Russia
+        concurrent: true
       - company: Soft Project
         role: Senior software engineer
         start: '2021-04'

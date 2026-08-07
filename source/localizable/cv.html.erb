@@ -38,7 +38,13 @@ section: cv
           <span class="entry__duration"><%= job_duration(job) %></span>
         </div>
         <div class="entry__body">
-          <h3 class="entry__title"><%= job[:company] %></h3>
+          <h3 class="entry__title">
+            <%= job[:company] %>
+            <%# Two overlapping periods look like a typo unless the overlap is labelled. %>
+            <% if job[:concurrent] %>
+              <span class="entry__tag"><%= t('cv.concurrent') %></span>
+            <% end %>
+          </h3>
           <p class="entry__role"><%= job[:role] %></p>
           <p class="entry__meta"><%= job[:location] %></p>
         </div>

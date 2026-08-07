@@ -6,15 +6,22 @@ section: home
 <% stack = %w[Ruby Rails Hanami Go PostgreSQL Redis Kafka RabbitMQ Docker Kubernetes] %>
 
 <section class="hero">
-  <p class="hero__handle">@<%= t('home.handle') %></p>
-  <h1 class="hero__name"><%= t('home.name') %><span class="cursor" aria-hidden="true"></span></h1>
-  <p class="hero__role"><%= t('home.role') %></p>
-  <p class="hero__intro"><%= t('home.intro') %></p>
-  <p class="hero__cta">
-    <a href="<%= locale_path('cv') %>" class="button">
-      <%= t('home.cta_cv') %> <span class="button__arrow" aria-hidden="true">&rarr;</span>
-    </a>
-  </p>
+  <figure class="portrait">
+    <%= image_tag 'portrait.jpg', alt: t('home.portrait_alt'), class: 'portrait__img',
+                  width: 212, height: 266, loading: 'eager' %>
+  </figure>
+
+  <div class="hero__text">
+    <p class="hero__handle">@<%= t('home.handle') %></p>
+    <h1 class="hero__name"><%= t('home.name') %><span class="cursor" aria-hidden="true"></span></h1>
+    <p class="hero__role"><%= t('home.role') %></p>
+    <p class="hero__intro"><%= t('home.intro') %></p>
+    <p class="hero__cta">
+      <a href="<%= locale_path('cv') %>" class="button">
+        <%= t('home.cta_cv') %> <span class="button__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </p>
+  </div>
 </section>
 
 <section class="section">

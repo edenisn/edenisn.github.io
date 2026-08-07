@@ -23,6 +23,7 @@ ru:
       Проектирую и развиваю серверную часть веб-приложений: API, бизнес-логику,
       интеграции, работу с данными и фоновые процессы. Вывожу сервисы в production
       и сопровождаю их.
+    portrait_alt: Денис Ерофеев, портрет
     cta_cv: Смотреть резюме
     contacts_title: Связаться
     stack_title: Основной стек
@@ -42,6 +43,7 @@ ru:
       community: Профессиональные сообщества
       about: О себе
     present: по настоящее время
+    concurrent: совмещение
     skill_groups:
       - title: Языки
         items: [Ruby, Go, JavaScript, SQL, Shell]
@@ -62,11 +64,13 @@ ru:
         start: '2022-12'
         end: '2024-11'
         location: Россия, Москва
+        concurrent: true
       - company: igooods
         role: Backend software engineer, старший
         start: '2021-08'
         end: '2024-11'
         location: Россия, Санкт-Петербург
+        concurrent: true
       - company: Софт Проект
         role: Senior software engineer
         start: '2021-04'

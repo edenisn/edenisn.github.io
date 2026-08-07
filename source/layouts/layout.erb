@@ -25,6 +25,8 @@
     <% other_langs.each do |lang| %>
       <meta property="og:locale:alternate" content="<%= lang == :ru ? 'ru_RU' : 'en_US' %>">
     <% end %>
+    <meta property="og:image" content="<%= absolute_url('/images/portrait.jpg') %>">
+    <meta property="og:image:alt" content="<%= t('home.portrait_alt') %>">
     <meta name="twitter:card" content="summary">
 
     <script type="application/ld+json"><%= person_schema %></script>

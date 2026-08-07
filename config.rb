@@ -95,6 +95,7 @@ helpers do
       'jobTitle' => t('home.role'),
       'description' => t(current_page.data.description_key),
       'url' => absolute_url(locale_path),
+      'image' => absolute_url('/images/portrait.jpg'),
       'email' => "mailto:#{config[:site_email]}",
       'sameAs' => config[:site_profiles],
       'knowsAbout' => t('cv.skill_groups').flat_map { |group| group[:items] },
