@@ -69,9 +69,16 @@ helpers do
     current_page.data.section || 'home'
   end
 
-  def current_slug
-    current_section == 'home' ? '' : current_section
-  end
+      def current_slug
+        current_section == 'home' ? '' : current_section
+      end
+
+      # A page built once for every locale (404) has no localized twin, so the
+      # language switcher aims at the other locale's home page instead of a URL
+      # that was never generated.
+      def switch_slug
+        current_page.data.localized == false ? '' : current_slug
+      end
 
   # Internal links are emitted directly rather than through link_to: Padrino
   # pipes hrefs through url_for, and Middleman's i18n override rewrites an

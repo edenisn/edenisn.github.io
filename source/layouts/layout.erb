@@ -56,7 +56,7 @@
             <span class="nav__lang is-current" aria-current="true"><%= t('lang_name') %></span>
             <% other_langs.each do |lang| %>
               <%# Middleman's `t` helper drops keyword args on Ruby 3, so go through I18n. %>
-              <a href="<%= locale_path(current_slug, locale: lang) %>"
+              <a href="<%= locale_path(switch_slug, locale: lang) %>"
                  class="nav__lang" lang="<%= lang %>" rel="alternate"><%= I18n.t('lang_name', locale: lang) %></a>
             <% end %>
           </span>
