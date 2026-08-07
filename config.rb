@@ -37,6 +37,9 @@ set :relative_links, false
 set :markdown_engine, :kramdown
 set :markdown, input: 'GFM', hard_wrap: false
 
+# Netlify looks for /404.html exactly, so this one page keeps its file name.
+page '/404.html', directory_index: false
+
 # Per-page layout changes
 page '/*.xml', layout: false
 page '/*.json', layout: false

@@ -161,7 +161,12 @@ a:focus-visible {
     color: $c-muted;
   }
 
-  &__cta { margin-top: $space-4; }
+  &__cta {
+    margin-top: $space-4;
+
+    // The 404 page offers a way home in both languages.
+    .button + .button { margin-left: $space-2; }
+  }
 }
 
 /* ------------------------------------------------------------- portrait */

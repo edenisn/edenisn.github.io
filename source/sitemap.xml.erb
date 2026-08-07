@@ -8,6 +8,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <% slugs = sitemap.resources
                   .select { |resource| resource.ext == '.html' && resource.data.section }
+                  .reject { |resource| resource.data.noindex }
                   .map { |resource| resource.data.section == 'home' ? '' : resource.data.section }
                   .uniq
                   .sort -%>

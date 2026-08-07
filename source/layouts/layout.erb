@@ -8,13 +8,21 @@
     <meta name="author" content="<%= t('home.name') %>">
     <meta name="theme-color" content="#0c0e0b">
 
-    <link rel="canonical" href="<%= absolute_url(locale_path(current_slug)) %>">
-    <% site_langs.each do |lang| %>
-      <link rel="alternate" hreflang="<%= lang %>"
-            href="<%= absolute_url(locale_path(current_slug, locale: lang)) %>">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <% if current_page.data.noindex %>
+      <meta name="robots" content="noindex">
+    <% else %>
+      <link rel="canonical" href="<%= absolute_url(locale_path(current_slug)) %>">
+      <% site_langs.each do |lang| %>
+        <link rel="alternate" hreflang="<%= lang %>"
+              href="<%= absolute_url(locale_path(current_slug, locale: lang)) %>">
+      <% end %>
+      <link rel="alternate" hreflang="x-default"
+            href="<%= absolute_url(locale_path(current_slug, locale: :ru)) %>">
     <% end %>
-    <link rel="alternate" hreflang="x-default"
-          href="<%= absolute_url(locale_path(current_slug, locale: :ru)) %>">
 
     <meta property="og:type" content="profile">
     <meta property="og:site_name" content="<%= t('home.name') %>">

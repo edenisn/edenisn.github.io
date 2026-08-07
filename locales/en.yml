@@ -33,7 +33,6 @@ en:
       Backend developer with %{experience} in the profession. Core stack is Ruby
       (Rails, Hanami), plus Go. I design APIs, work with databases under load, build
       asynchronous integrations, and grow legacy codebases instead of fearing them.
-    download: Print version
     sections:
       skills: Skills
       experience: Experience
@@ -131,6 +130,12 @@ en:
         I can take services to production and keep them there: designing APIs,
         working with databases under load, building asynchronous integrations,
         and making sense of legacy code. I take part in open source.
+  not_found:
+    title: 404 — page not found
+    description: This page does not exist.
+    command: cat /requested-page
+    message: no such file or directory
+    back: Go home
   contacts:
     email: Email
     telegram: Telegram

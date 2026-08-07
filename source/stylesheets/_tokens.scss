@@ -8,7 +8,9 @@ $c-border-lo: #1b2117;
 
 $c-text:      #ccd3c6;
 $c-muted:     #8d9786;
-$c-faint:     #5f6a59;
+// Dimmest text on the site (durations, locations, badges), so it has to clear
+// 4.5:1 against $c-bg on its own: measured 4.96:1.
+$c-faint:     #7a8472;
 
 $c-accent:    #ffb552; // amber phosphor
 $c-accent-lo: #a9762c;

@@ -1,0 +1,24 @@
+---
+title_key: not_found.title
+description_key: not_found.description
+section: 404
+noindex: true
+---
+<%#
+  Netlify serves this single file for every missing path, including the ones
+  under /en/, so it speaks both languages and links to both home pages.
+-%>
+<section class="hero hero--compact">
+  <p class="hero__handle">$ <%= I18n.t('not_found.command', locale: :ru) %></p>
+  <h1 class="hero__name">404</h1>
+  <p class="hero__role">cat: <%= I18n.t('not_found.message', locale: :ru) %></p>
+  <p class="hero__role" lang="en">cat: <%= I18n.t('not_found.message', locale: :en) %></p>
+  <p class="hero__cta">
+    <a href="/" class="button">
+      <span class="button__arrow" aria-hidden="true">&larr;</span> <%= I18n.t('not_found.back', locale: :ru) %>
+    </a>
+    <a href="/en/" class="button" lang="en">
+      <span class="button__arrow" aria-hidden="true">&larr;</span> <%= I18n.t('not_found.back', locale: :en) %>
+    </a>
+  </p>
+</section>
