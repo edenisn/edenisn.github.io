@@ -52,7 +52,6 @@ GEM
       logger
     eventmachine (1.2.7)
     eventmachine (1.2.7-java)
-    eventmachine (1.2.7-x64-mingw32)
     eventmachine (1.2.7-x86-mingw32)
     execjs (2.10.1)
     fast_blank (1.0.1)
@@ -171,7 +170,7 @@ GEM
     public_suffix (7.0.5)
     racc (1.8.1)
     racc (1.8.1-java)
-    rack (3.2.6)
+    rack (3.2.8)
     rack-livereload (0.3.17)
       rack
     rackup (2.3.1)
@@ -184,8 +183,6 @@ GEM
     rouge (3.30.0)
     ruby-rc4 (0.1.5)
     sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc (2.4.0-x64-mingw32)
       ffi (~> 1.9)
     securerandom (0.4.1)
     servolux (0.13.0)
@@ -214,7 +211,7 @@ PLATFORMS
   arm64-darwin
   java
   ruby
-  x64-mingw32
+  x64-mingw-ucrt
   x86-mingw32
   x86-mswin32
   x86_64-linux
